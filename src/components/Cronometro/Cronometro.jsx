@@ -13,7 +13,7 @@ const Cronometro = () => {
         let intervalo;
         if(inicio) {
             intervalo = setInterval(() => {
-                if(milisegundos < 99) {
+                if(milisegundos < 9) {
                     setMilisegundos(milisegundos + 1);
                 } else {
                     setMilisegundos(0);
@@ -29,7 +29,7 @@ const Cronometro = () => {
                         }
                     }
                 }
-            }, 1)
+            }, 100)
         }
         return () => clearInterval(intervalo);
     })
@@ -50,7 +50,7 @@ const Cronometro = () => {
                 <li>:</li>
                 <li className='basis-64'>{segundos < 10 ? `0${segundos}` : segundos}</li>
                 <li>:</li>
-                <li className='basis-64'>{milisegundos < 10 ? `0${milisegundos}` : milisegundos}</li>
+                <li className='basis-64'>{milisegundos}</li>
             </ul>
             <section className='py-10 px-20 flex flex-row justify-center text-white text-4xl'>
                 {inicio ?
